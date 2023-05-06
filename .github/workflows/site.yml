@@ -8,8 +8,10 @@ jobs:
   deploy:
     environment:
       name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
+      url: https://www.jessekelly.me
     runs-on: ubuntu-latest
+    permissions:
+      id-token: "write"
     steps:
       - name: Checkout
         uses: actions/checkout@v3
