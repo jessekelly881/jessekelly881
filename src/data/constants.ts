@@ -7,6 +7,10 @@ export const MENU_LINKS = [
 		title: "Resume",
 		path: "https://resume.jessekelly.me/resume.pdf",
 	},
+	{
+		title: "Github",
+		path: "https://github.com/jessekelly881",
+	},
 ];
 
 // ! Remember to add your own socials
