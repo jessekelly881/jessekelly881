@@ -12,7 +12,7 @@
     :city        "Mexico City, 🇲🇽"
     :interests   '("functional programming" "emacs"
                    "rust" "crypto" "typescript" 
-                   "open source software" 
+                   "effect-ts" "open source software" 
                    "web" "mathematics" "scuba" 
                    "skydiving" "travel")
     :lang        '(🇺🇸, 🇲🇽)))
