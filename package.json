@@ -43,11 +43,28 @@
 	},
 	"dependencies": {
 		"@astrojs/prefetch": "^0.2.1",
+		"@astrojs/react": "^2.2.1",
 		"@astrojs/rss": "^2.3.2",
+		"@codemirror/language": "^6.8.0",
+		"@codemirror/legacy-modes": "^6.3.2",
+		"@effect/schema": "^0.20.1",
+		"@radix-ui/react-label": "^2.0.2",
+		"@types/react": "^18.0.21",
+		"@types/react-dom": "^18.0.6",
+		"@uiw/codemirror-theme-dracula": "^4.21.3",
+		"@uiw/codemirror-theme-okaidia": "^4.21.3",
+		"@uiw/codemirror-themes": "^4.21.3",
+		"@uiw/react-codemirror": "^4.21.3",
+		"@uiw/react-textarea-code-editor": "^2.1.6",
 		"astro": "2.3.0",
 		"astro-google-analytics": "^1.0.3",
+		"class-variance-authority": "^0.6.0",
+		"react": "^18.0.0",
+		"react-dom": "^18.0.0",
+		"rehype": "^12.0.1",
 		"satori": "0.4.11",
 		"satori-html": "^0.3.2",
-		"sharp": "^0.31.3"
+		"sharp": "^0.31.3",
+		"yaml": "^2.3.1"
 	}
 }

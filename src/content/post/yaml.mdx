@@ -1,0 +1,61 @@
+---
+title: Synchronizing a UI with a YAML Document
+description: Implementing a 2 way sync between a yaml document and a UI
+publishDate: June 13, 2023
+---
+
+import Example from "../../components/examples/yaml-ui-sync";
+
+## Motivation
+
+YAML is a widely used file format for storing configuration data and facilitating low-code scripting. Recently, I was involved in a project that necessitated bidirectional edits between a raw YAML file and a user interface (UI) that visualized the data within the file. While transitioning from YAML to UI or vice versa is relatively straightforward, achieving synchronization in both directions poses a greater challenge.
+
+The root cause of the challenge is dealing with the non-data aspects of a yaml file such as comments and formatting. If special care isn't taken to preserve these details, they will be lost when the file is updated in the UI. Fortunatly, libraries like "yaml" provide a way to update values within a yaml document, _in place_ without affecting comments or formatting.
+
+## Decoding (i.e. YAML to UI)
+
+The first step that we need to consider happens to be the easiest, decoding the yaml document and rendering the data to the UI. This is made pretty straight forward by the `yaml` library and can be implemented as follows:
+
+```ts
+import { parse } from "yaml";
+
+const code = `# YAML
+# Some comment
+
+title: YAML Example
+description: This is an example of a YAML file.`;
+
+// { title: "YAML Example", description: "..." }
+const obj = parse(raw);
+```
+
+## Encoding (i.e. UI to YAML)
+
+Encoding on the other hand is a bit more complicated, especially if we want to preserve comments and formatting. The first step is to convert the yaml document into a data structure that can be easily manipulated. This is where the `yaml` library comes in handy again. However, the yaml library provides another function that comes in handy here, called _parseDocument_, which, instead of returning a json object with the data from the yaml document, returns an ast for the document made up of data _nodes_.
+
+Given the tree of nodes we can then set the value of certain keys and rerender the resulting ast to a string, comments and formatting unaffected like so:
+
+```ts
+import { parseDocument } from "yaml";
+
+const doc = parseDocument(raw);
+const node = doc["get"]("title", true);
+node.value = "New title";
+
+/*
+ # YAML
+ # Some comment
+
+ title: New title
+ description: This is an example of a YAML file.
+ */
+const str = doc.toString();
+```
+
+## Final Result
+
+This is what the final result will look like. Note how updating values in the UI updates the value in yaml without affecting comments or formatting.
+
+---
+
+<Example client:load />
