@@ -40,7 +40,7 @@ jobs:
 
       - name: Install and Build
         run: |
-          pnpm install
+          pnpm install --no-frozen-lockfile
           pnpm run build
 
       - name: Setup Pages
