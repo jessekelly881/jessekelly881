@@ -13,7 +13,6 @@
     :interests   '("functional programming" "emacs"
                    "rust" "crypto" "typescript" 
                    "effect-ts" "open source software" 
-                   "web" "mathematics" "scuba" 
-                   "skydiving" "travel")
+                   "web" "mathematics" "scuba" "travel")
     :lang        '(🇺🇸, 🇲🇽)))
 ```
