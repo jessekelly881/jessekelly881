@@ -3,7 +3,7 @@
 (defvar jesse
   '(:name        "Jesse Kelly"
     :pronouns    "he/him"
-    :age         29
+    :age         30
     :title       "senior software engineer"
     :url         "jessekelly.me"
     :education   (mapcar '(λ (el) (concat el " @ The Ohio State University")
