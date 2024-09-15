@@ -1,9 +1,9 @@
 ---
-import { getCollection } from "astro:content";
-import PageLayout from "@/layouts/Base";
 import PostPreview from "@/components/blog/PostPreview";
 import SocialList from "@/components/SocialList";
+import PageLayout from "@/layouts/Base";
 import { sortMDByDate } from "@/utils";
+import { getCollection } from "astro:content";
 
 const MAX_POSTS = 10;
 const allPosts = await getCollection("post");
@@ -13,7 +13,11 @@ const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 <PageLayout meta={{ title: "Home" }}>
 	<section>
 		<p class="mb-4">
-			Hi, I'm Jesse, an engineer currently living in Mexico City. I'm passionate about building things, learning new things, and sharing what I've learned.
+      Hey, I’m Jesse! I’m a full stack engineer who loves building things that work seamlessly and solve real problems.
+      I’m always diving into new tech, experimenting with fresh ideas, and finding better ways to create.
+      When I’m not coding, I’m usually learning something new or working on a side project that keeps me curious.
+      I’m all about sharing what I’ve learned and building things that matter.
+      Let’s connect and see what we can create together!
 		</p>
 		<SocialList />
 	</section>
