@@ -2,6 +2,7 @@
 ```emacs-lisp
 (defvar jesse
   '(:name        "Jesse Kelly"
+    :pronouns    "thou/thee/thine"
     :age         31
     :title       "lead software engineer"
     :url         "jessekelly.me"
